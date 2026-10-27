@@ -17,3 +17,5 @@ Abra http://localhost:3000.
 - `src/lib/empresa.ts`: razão social, CNPJ, endereço e e-mail (aparecem no rodapé e nas páginas legais).
 - `src/data/ofertas.json`: produtos de exemplo (fotos em `public/ofertas`).
 - Vercel → Settings → Environment Variables: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GADS_ID`, `NEXT_PUBLIC_GADS_LABEL` (veja `.env.example`).
+
+Para conectar o domínio, siga o `DOMINIO.md`.

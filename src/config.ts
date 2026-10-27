@@ -5,7 +5,7 @@ export const MARCA = "Preço Campeão";
 // Endereço oficial do site. Ao conectar o domínio, defina NEXT_PUBLIC_SITE_URL na Vercel
 // (ex.: https://www.precocampeao.com.br) e faça um novo deploy: canonical, sitemap e
 // prévias de compartilhamento passam a usar o domínio automaticamente.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://pre-ocampeao.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://pre-ocampeao-ecommercelooja.vercel.app").replace(/\/$/, "");
 // Razão social, CNPJ, endereço e e-mail ficam em src/lib/empresa.ts.
 
 // Links de convite dos grupos de WhatsApp. Todos entram pelo primeiro link da lista.
