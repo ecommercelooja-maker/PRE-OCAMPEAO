@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconeTelegram, IconeWhats } from "@/components/Marca";
 import { ADS_ID, CHAVE_COOKIES, MARCA, SITE_URL, TEXTO_INDICACAO } from "@/config";
 import { converter, rastrear } from "@/lib/rastreio";
@@ -66,6 +66,41 @@ export function Efeitos() {
     };
   }, []);
   return null;
+}
+
+/* Vídeo em loop: só baixa quando chega perto da tela e pausa fora dela. Com "reduzir movimento", fica na capa. */
+export function VideoLoop({ nome, className = "", rotulo }: { nome: string; className?: string; rotulo?: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(
+      ([en]) => {
+        if (en.isIntersecting) {
+          if (!v.src) v.src = `/video/${nome}.mp4`;
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      },
+      { rootMargin: "300px 0px" },
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [nome]);
+  return (
+    <video
+      ref={ref}
+      className={className}
+      poster={`/video/${nome}.jpg`}
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-label={rotulo}
+      aria-hidden={rotulo ? undefined : true}
+    />
+  );
 }
 
 /* Barra de CTA fixa no rodapé do celular: aparece depois que o topo da página sai da tela. */

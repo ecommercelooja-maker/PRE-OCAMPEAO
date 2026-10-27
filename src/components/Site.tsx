@@ -99,7 +99,9 @@ export function Rodape({ home = false }: { home?: boolean }) {
           produtos e não representa essas empresas. Confira preço, estoque e condições na loja antes de comprar.
         </p>
         <p>
-          © {new Date().getFullYear()} {MARCA}
+          © {new Date().getFullYear()} {MARCA} · Emojis animados:{" "}
+          <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> (CC BY 4.0) · Fotos:{" "}
+          <a href="https://unsplash.com">Unsplash</a> · Vídeos: <a href="https://mixkit.co">Mixkit</a>
         </p>
       </div>
     </footer>
