@@ -50,7 +50,7 @@ Todo push na `main` publica em produção automaticamente; as outras branches ge
 
 ## Antes de anunciar no Google Ads
 
-- `src/lib/empresa.ts`: razão social, CNPJ, endereço e e-mail (hoje com marcadores `[ ]`).
+- `src/lib/empresa.ts`: razão social, nome fantasia, CNPJ, endereço e e-mail (confira se estão corretos).
 - `src/config.ts`: links dos grupos de WhatsApp (`LINKS_WHATSAPP`) e do Telegram (`TELEGRAM`).
 - Vercel → *Environment Variables* (Production): `NEXT_PUBLIC_GADS_ID` e `NEXT_PUBLIC_GADS_LABEL`
   (veja `.env.example`). A tag do Google só carrega com o ID e começa com consentimento negado
